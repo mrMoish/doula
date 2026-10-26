@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
-import { ArrowUpRight, ChevronDown, Menu, MessageCircle, X } from 'lucide-react'
+import { ArrowUpRight, Camera, ChevronDown, Menu, Send, X } from 'lucide-react'
 
 type Locale = 'ru' | 'es' | 'en'
 
@@ -22,7 +22,7 @@ const copy: Record<Locale, Copy> = {
   ru: {
     nav: { about: 'Обо мне', services: 'Сопровождение', faq: 'Вопросы', contact: 'Написать Саше' },
     hero: { eyebrow: 'БУЭНОС-АЙРЕС · АРГЕНТИНА', title: 'Рождение ребёнка — большой путь. Не обязательно проходить его одной', body: 'Бережная поддержка на русском языке во время беременности, родов и после рождения малыша — в Буэнос-Айресе.', primary: 'Познакомиться', secondary: 'Обсудить сопровождение', imageAlt: 'Мать с новорождённым у окна' },
-    intro: { kicker: '01 · ОБО МНЕ', title: 'Давайте познакомимся', body: 'Меня зовут Саша. Я рядом, чтобы внимательно выслушать вас, помочь сориентироваться в новом опыте и сохранить пространство для ваших решений.', note: 'С уважением к вашему темпу, выбору и истории — без оценок и готовых сценариев.', imageAlt: 'Портрет доулы Саши Кертс' },
+    intro: { kicker: '01 · ОБО МНЕ', title: 'Давайте познакомимся', body: 'Меня зовут Саша. Я рядом, чтобы внимательно выслушать вас, помочь сориентироваться в новом опыте и сохранить пространство для ваших решений.', note: 'С уважением к вашему темпу, выбору и истории — без оценок и готовых сценариев.', imageAlt: 'Саша в синей форме и голубой шапочке' },
     services: { kicker: '02 · СОПРОВОЖДЕНИЕ', title: 'Поддержка на каждом этапе', intro: 'Формат сопровождения мы определяем вместе — в зависимости от вашей ситуации, запросов и моей текущей доступности.', items: [{ number: '01', title: 'Беременность', text: 'Разговоры, подготовка и эмоциональная опора в период ожидания малыша.' }, { number: '02', title: 'Роды', text: 'Непрерывное присутствие и поддержка ваших решений во время родов — в рамках моей роли доулы.' }, { number: '03', title: 'После рождения', text: 'Бережный переход в новую жизнь, пространство для вопросов и забота о вас после встречи с малышом.' }] },
     education: { kicker: '03 · ВАЖНО ЗНАТЬ', title: 'Беременность и роды в новой стране — с поддержкой на родном языке', body: 'Когда рядом человек, с которым можно говорить по-русски, бывает проще задавать вопросы, выражать тревоги и обсуждать личные предпочтения. В Буэнос-Айресе я могу быть внимательным собеседником и дополнительной опорой на вашем пути.', points: ['Доулa не заменяет акушера-гинеколога, акушерку, психолога или другого квалифицированного специалиста.', 'Моя поддержка — эмоциональная, информационная и практическая; медицинские решения принимаются вместе с вашей командой специалистов.', 'Каждая история индивидуальна. Мы заранее обсуждаем границы сопровождения и то, что важно именно вам.'], note: 'Общая информация не является медицинской рекомендацией.' },
     process: { kicker: '04 · КАК ЭТО ПРОИСХОДИТ', title: 'Три шага к знакомству', steps: [{ number: '01', title: 'Вы пишете', text: 'Расскажите немного о себе и о том, что сейчас важно. Можно на русском, испанском или английском.' }, { number: '02', title: 'Мы созваниваемся', text: 'Задаём вопросы друг другу и понимаем, подходит ли вам мой формат поддержки.' }, { number: '03', title: 'Договариваемся', text: 'Если наши ожидания совпадают, обсуждаем детали, границы и доступность.' }], cta: 'Написать в WhatsApp' },
@@ -33,7 +33,7 @@ const copy: Record<Locale, Copy> = {
   es: {
     nav: { about: 'Sobre mí', services: 'Acompañamiento', faq: 'Preguntas', contact: 'Escribirle a Sasha' },
     hero: { eyebrow: 'BUENOS AIRES · ARGENTINA', title: 'Nacer es un gran viaje. No tenés que atravesarlo sola', body: 'Acompañamiento cálido en ruso durante el embarazo, el parto y el posparto, en Buenos Aires.', primary: 'Conoceme', secondary: 'Hablemos del acompañamiento', imageAlt: 'Madre con su bebé recién nacido junto a una ventana' },
-    intro: { kicker: '01 · SOBRE MÍ', title: 'Conozcámonos', body: 'Soy Sasha. Estoy para escucharte con atención, acompañarte a orientarte en una experiencia nueva y cuidar el espacio para tus decisiones.', note: 'Con respeto por tus tiempos, tus elecciones y tu historia — sin juicios ni guiones predeterminados.', imageAlt: 'Retrato de Sasha Kerts, doula' },
+    intro: { kicker: '01 · SOBRE MÍ', title: 'Conozcámonos', body: 'Soy Sasha. Estoy para escucharte con atención, acompañarte a orientarte en una experiencia nueva y cuidar el espacio para tus decisiones.', note: 'Con respeto por tus tiempos, tus elecciones y tu historia — sin juicios ni guiones predeterminados.', imageAlt: 'Sasha con uniforme azul y gorro celeste' },
     services: { kicker: '02 · ACOMPAÑAMIENTO', title: 'Apoyo en cada etapa', intro: 'Definimos el formato juntas, según tu situación, tus necesidades y mi disponibilidad actual.', items: [{ number: '01', title: 'Embarazo', text: 'Conversaciones, preparación y apoyo emocional durante la espera.' }, { number: '02', title: 'Parto', text: 'Presencia continua y apoyo a tus decisiones durante el parto, dentro de mi rol como doula.' }, { number: '03', title: 'Posparto', text: 'Un pasaje cuidado a la nueva vida, espacio para preguntas y apoyo después de la llegada de tu bebé.' }] },
     education: { kicker: '03 · PARA SABER', title: 'Embarazo y parto en un país nuevo, con apoyo en tu idioma', body: 'Cuando podés hablar en tu idioma, puede ser más fácil hacer preguntas, expresar preocupaciones y conversar sobre tus preferencias. En Buenos Aires, puedo ser una escucha atenta y un apoyo adicional en tu camino.', points: ['Una doula no reemplaza a tu obstetra, partera, psicóloga ni a ningún otro profesional calificado.', 'Mi apoyo es emocional, informativo y práctico; las decisiones médicas se toman con tu equipo de profesionales.', 'Cada historia es única. Conversamos de antemano sobre los límites del acompañamiento y lo que es importante para vos.'], note: 'La información general no constituye consejo médico.' },
     process: { kicker: '04 · CÓMO FUNCIONA', title: 'Tres pasos para conocernos', steps: [{ number: '01', title: 'Me escribís', text: 'Contame un poco sobre vos y qué necesitás hoy. Podemos hablar en ruso, español o inglés.' }, { number: '02', title: 'Conversamos', text: 'Nos hacemos preguntas y vemos si mi forma de acompañar es adecuada para vos.' }, { number: '03', title: 'Acordamos', text: 'Si hay sintonía, conversamos los detalles, los límites y la disponibilidad.' }], cta: 'Escribirme por WhatsApp' },
@@ -44,7 +44,7 @@ const copy: Record<Locale, Copy> = {
   en: {
     nav: { about: 'About', services: 'Support', faq: 'Questions', contact: 'Write to Sasha' },
     hero: { eyebrow: 'BUENOS AIRES · ARGENTINA', title: 'Birth is a big journey. You do not have to walk it alone', body: 'Gentle Russian-language support through pregnancy, birth and the early postpartum season in Buenos Aires.', primary: 'Meet Sasha', secondary: 'Talk about support', imageAlt: 'Mother holding her newborn beside a window' },
-    intro: { kicker: '01 · ABOUT', title: 'Let’s get to know each other', body: 'I’m Sasha. I’m here to listen closely, help you find your bearings in a new experience and make room for your own decisions.', note: 'With respect for your pace, your choices and your story — without judgement or a ready-made script.', imageAlt: 'Portrait of doula Sasha Kerts' },
+    intro: { kicker: '01 · ABOUT', title: 'Let’s get to know each other', body: 'I’m Sasha. I’m here to listen closely, help you find your bearings in a new experience and make room for your own decisions.', note: 'With respect for your pace, your choices and your story — without judgement or a ready-made script.', imageAlt: 'Sasha wearing blue scrubs and a light blue cap' },
     services: { kicker: '02 · SUPPORT', title: 'Support at every stage', intro: 'We shape the format together, based on your situation, what you need and my current availability.', items: [{ number: '01', title: 'Pregnancy', text: 'Conversations, preparation and emotional support while you wait to meet your baby.' }, { number: '02', title: 'Birth', text: 'Continuous presence and support for your decisions during birth, within my role as a doula.' }, { number: '03', title: 'Postpartum', text: 'A cared-for transition into new life, room for questions and support after your baby arrives.' }] },
     education: { kicker: '03 · GOOD TO KNOW', title: 'Pregnancy and birth in a new country, with support in your own language', body: 'Speaking in your own language can make it easier to ask questions, express concerns and talk through personal preferences. In Buenos Aires, I can offer an attentive conversation and an additional layer of support on your journey.', points: ['A doula does not replace your obstetrician, midwife, psychologist or any other qualified professional.', 'My support is emotional, informational and practical; medical decisions belong with your professional care team.', 'Every story is different. We discuss the boundaries of support and what matters to you in advance.'], note: 'General information is not medical advice.' },
     process: { kicker: '04 · THE PROCESS', title: 'Three steps to meeting', steps: [{ number: '01', title: 'You write', text: 'Tell me a little about yourself and what matters right now. Russian, Spanish or English are all welcome.' }, { number: '02', title: 'We talk', text: 'We ask each other questions and see whether my way of supporting feels right for you.' }, { number: '03', title: 'We agree', text: 'If it feels like a fit, we discuss the details, boundaries and availability.' }], cta: 'Message on WhatsApp' },
@@ -54,9 +54,20 @@ const copy: Record<Locale, Copy> = {
   },
 }
 
-const whatsappUrl = (locale: Locale) => {
-  const messages = { ru: 'Здравствуйте, Саша! Я нашла ваш сайт и хотела бы узнать подробнее о сопровождении доулы в Буэнос-Айресе', es: 'Hola, Sasha. Encontré tu sitio y me gustaría conocer más sobre tu acompañamiento como doula en Buenos Aires.', en: 'Hello, Sasha. I found your website and would love to learn more about doula support in Buenos Aires.' }
-  return `https://wa.me/?text=${encodeURIComponent(messages[locale])}`
+const whatsappMessages: Record<Locale, string> = {
+  ru: 'Добрый день, хочу записаться на консультацию.',
+  es: 'Hola, Sasha. Buen día, quisiera coordinar una consulta.',
+  en: "Hello, Sasha. Good afternoon, I'd like to book a consultation.",
+}
+const whatsappPhone = '5491132849594'
+const whatsappUrl = (locale: Locale) =>
+  `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessages[locale])}`
+const whatsappIconSrc = 'https://thesvg.org/icons/whatsapp/default.svg'
+const portraitImageSrc = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-DsHOWWDWr2aipqNDO7LyzHkotgSMma.jpeg'
+const telegramUrl = 'https://t.me/kertsasha'
+
+function WhatsAppIcon({ size = 18 }: { size?: number }) {
+  return <Image src={whatsappIconSrc} alt="" aria-hidden="true" width={size} height={size} unoptimized />
 }
 
 export default function Page() {
@@ -75,7 +86,7 @@ export default function Page() {
           <button onClick={() => goTo('about')}>{t.nav.about}</button>
           <button onClick={() => goTo('services')}>{t.nav.services}</button>
           <button onClick={() => goTo('faq')}>{t.nav.faq}</button>
-          <a className="nav-contact" href={whatsappUrl(locale)} target="_blank" rel="noreferrer">{t.nav.contact} <ArrowUpRight size={15} /></a>
+          <a className="nav-contact" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.nav.contact}`}><WhatsAppIcon size={15} /><span>{t.nav.contact}</span><ArrowUpRight size={15} aria-hidden="true" /></a>
         </nav>
         <div className="header-actions">
           <div className="language-switcher" aria-label="Language selector">
@@ -86,24 +97,24 @@ export default function Page() {
       </header>
 
       <section className="hero" id="top">
-        <div className="hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.title}</h1><p className="hero-body">{t.hero.body}</p><div className="button-row"><button className="button button-dark" onClick={() => goTo('about')}>{t.hero.primary} <ArrowUpRight size={16} /></button><a className="text-link" href={whatsappUrl(locale)} target="_blank" rel="noreferrer">{t.hero.secondary} <ArrowUpRight size={16} /></a></div></div>
+        <div className="hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.title}</h1><p className="hero-body">{t.hero.body}</p><div className="button-row"><button className="button button-dark" onClick={() => goTo('about')}>{t.hero.primary} <ArrowUpRight size={16} /></button><a className="text-link" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.hero.secondary}`}><WhatsAppIcon size={16} /><span>{t.hero.secondary}</span><ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
         <div className="hero-image"><Image src="/images/sasha-hero.png" alt={t.hero.imageAlt} fill priority sizes="(max-width: 768px) 100vw, 54vw" /></div>
         <span className="hero-index">01 / 07</span>
       </section>
 
-      <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame"><Image src="/images/sasha-portrait.png" alt={t.intro.imageAlt} fill sizes="(max-width: 768px) 88vw, 38vw" /></div><div className="intro-copy"><h2>{t.intro.title}</h2><p>{t.intro.body}</p><p className="italic-note">{t.intro.note}</p></div></section>
+      <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame"><Image src={portraitImageSrc} alt={t.intro.imageAlt} fill sizes="(max-width: 768px) 88vw, 38vw" /></div><div className="intro-copy"><h2>{t.intro.title}</h2><p>{t.intro.body}</p><p className="italic-note">{t.intro.note}</p></div></section>
 
       <section className="services section-pad" id="services"><div className="section-heading"><p className="eyebrow">{t.services.kicker}</p><h2>{t.services.title}</h2><p>{t.services.intro}</p></div><div className="service-grid">{t.services.items.map((item) => <article className="service-card" key={item.number}><span className="card-number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p><span className="card-line" /></article>)}</div></section>
 
       <section className="education"><div className="education-inner"><div><p className="eyebrow">{t.education.kicker}</p><h2>{t.education.title}</h2></div><div className="education-copy"><p className="lead">{t.education.body}</p><ul>{t.education.points.map((point) => <li key={point}><span>✦</span>{point}</li>)}</ul><p className="disclaimer">{t.education.note}</p></div></div></section>
 
-      <section className="process section-pad"><div className="section-heading process-heading"><p className="eyebrow">{t.process.kicker}</p><h2>{t.process.title}</h2></div><div className="steps-grid">{t.process.steps.map((step) => <div className="step" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div><a className="button button-outline" href={whatsappUrl(locale)} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.process.cta}</a></section>
+      <section className="process section-pad"><div className="section-heading process-heading"><p className="eyebrow">{t.process.kicker}</p><h2>{t.process.title}</h2></div><div className="steps-grid">{t.process.steps.map((step) => <div className="step" key={step.number}><span className="step-number">{step.number}</span><h3>{step.title}</h3><p>{step.text}</p></div>)}</div><a className="button button-outline" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.process.cta}`}><WhatsAppIcon size={17} />{t.process.cta}</a></section>
 
       <section className="faq section-pad" id="faq"><div className="faq-title"><p className="eyebrow">{t.faq.kicker}</p><h2>{t.faq.title}</h2></div><div className="faq-list">{t.faq.items.map((item, index) => <div className="faq-item" key={item.q}><button onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}><span>{item.q}</span>{openFaq === index ? <X size={18} /> : <ChevronDown size={18} />}</button>{openFaq === index && <p>{item.a}</p>}</div>)}</div></section>
 
-      <section className="final-cta"><div><p className="eyebrow">{t.final.eyebrow}</p><h2>{t.final.title}</h2><p>{t.final.body}</p><div className="button-row"><a className="button button-light" href={whatsappUrl(locale)} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.final.cta}</a><a className="instagram-link" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">{t.final.instagram} <ArrowUpRight size={16} /></a></div></div><span className="final-mark">SK</span></section>
+      <section className="final-cta"><div><p className="eyebrow">{t.final.eyebrow}</p><h2>{t.final.title}</h2><p>{t.final.body}</p><div className="contact-actions"><a className="contact-action contact-action--whatsapp" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.final.cta}`}><WhatsAppIcon size={18} /><span>{t.final.cta}</span><ArrowUpRight size={15} aria-hidden="true" /></a><a className="contact-action contact-action--telegram" href={telegramUrl} target="_blank" rel="noopener noreferrer"><Send size={16} aria-hidden="true" /><span>Telegram · @kertsasha</span><ArrowUpRight size={15} aria-hidden="true" /></a><a className="contact-action contact-action--instagram" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noopener noreferrer"><Camera size={16} aria-hidden="true" /><span>{t.final.instagram}</span><ArrowUpRight size={15} aria-hidden="true" /></a></div></div><span className="final-mark">SK</span></section>
 
-      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div><div className="footer-right"><a href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">Instagram</a><p>{t.footer.privacy}</p></div></footer>
+      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div><div className="footer-right"><div className="footer-contact-actions"><a className="contact-action contact-action--whatsapp" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.final.cta}`}><WhatsAppIcon size={15} /><span>{t.final.cta}</span></a><a className="contact-action contact-action--telegram" href={telegramUrl} target="_blank" rel="noopener noreferrer"><Send size={14} aria-hidden="true" /><span>Telegram · @kertsasha</span></a><a className="contact-action contact-action--instagram" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noopener noreferrer"><Camera size={14} aria-hidden="true" /><span>{t.final.instagram}</span></a></div><p>{t.footer.privacy}</p></div></footer>
     </main>
   )
 }
