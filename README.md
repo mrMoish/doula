@@ -11,7 +11,7 @@ The service descriptions, FAQ answers, pricing, location details, and availabili
 The application logic references these stable paths:
 
 - `public/images/sasha-hero.png` — hero maternity image
-- `public/images/sasha-portrait.jpeg` — local copy of Sasha’s portrait. The homepage uses the provided Source URL, configured as `portraitImageSrc` in `app/page.tsx`; update it when replacing the photo.
+- `public/images/sasha-portrait.jpeg` — local copy for asset replacement. The homepage currently uses the latest provided Source URL via `portraitImageSrc` in `app/page.tsx`.
 
 Replace either file with an appropriately licensed, web-optimized image without changing components. Keep the same filename, or update the `src` in `app/page.tsx`. Sasha's public Instagram (`https://www.instagram.com/kertsasha/`) is a possible source for authentic imagery, subject to permission and image rights.
 

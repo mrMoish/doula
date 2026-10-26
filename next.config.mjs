@@ -10,13 +10,8 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'thesvg.org',
-        pathname: '/icons/whatsapp/default.svg',
-      },
-      {
-        protocol: 'https',
         hostname: 'hebbkx1anhila5yf.public.blob.vercel-storage.com',
-        pathname: '/IMG_0980-DsHOWWDWr2aipqNDO7LyzHkotgSMma.jpeg',
+        pathname: '/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg',
       },
     ],
     unoptimized: true,
