@@ -54,10 +54,15 @@ const copy: Record<Locale, Copy> = {
   },
 }
 
-const whatsappUrl = (locale: Locale) => {
-  const messages = { ru: 'Здравствуйте, Саша! Я нашла ваш сайт и хотела бы узнать подробнее о сопровождении доулы в Буэнос-Айресе', es: 'Hola, Sasha. Encontré tu sitio y me gustaría conocer más sobre tu acompañamiento como doula en Buenos Aires.', en: 'Hello, Sasha. I found your website and would love to learn more about doula support in Buenos Aires.' }
-  return `https://wa.me/?text=${encodeURIComponent(messages[locale])}`
+const whatsappMessages: Record<Locale, string> = {
+  ru: 'Добрый день, хочу записаться на консультацию.',
+  es: 'Hola, Sasha. Buen día, quisiera coordinar una consulta.',
+  en: "Hello, Sasha. Good afternoon, I'd like to book a consultation.",
 }
+const whatsappPhone = '5491132849594'
+const whatsappUrl = (locale: Locale) =>
+  `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(whatsappMessages[locale])}`
+const telegramUrl = 'https://t.me/kertsasha'
 
 export default function Page() {
   const [locale, setLocale] = useState<Locale>('ru')
@@ -101,9 +106,9 @@ export default function Page() {
 
       <section className="faq section-pad" id="faq"><div className="faq-title"><p className="eyebrow">{t.faq.kicker}</p><h2>{t.faq.title}</h2></div><div className="faq-list">{t.faq.items.map((item, index) => <div className="faq-item" key={item.q}><button onClick={() => setOpenFaq(openFaq === index ? null : index)} aria-expanded={openFaq === index}><span>{item.q}</span>{openFaq === index ? <X size={18} /> : <ChevronDown size={18} />}</button>{openFaq === index && <p>{item.a}</p>}</div>)}</div></section>
 
-      <section className="final-cta"><div><p className="eyebrow">{t.final.eyebrow}</p><h2>{t.final.title}</h2><p>{t.final.body}</p><div className="button-row"><a className="button button-light" href={whatsappUrl(locale)} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.final.cta}</a><a className="instagram-link" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">{t.final.instagram} <ArrowUpRight size={16} /></a></div></div><span className="final-mark">SK</span></section>
+      <section className="final-cta"><div><p className="eyebrow">{t.final.eyebrow}</p><h2>{t.final.title}</h2><p>{t.final.body}</p><div className="button-row"><a className="button button-light" href={whatsappUrl(locale)} target="_blank" rel="noreferrer"><MessageCircle size={17} />{t.final.cta}</a><a className="instagram-link" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">{t.final.instagram} <ArrowUpRight size={16} /></a><a className="contact-link" href={telegramUrl} target="_blank" rel="noopener noreferrer">Telegram · @kertsasha <ArrowUpRight size={16} /></a></div></div><span className="final-mark">SK</span></section>
 
-      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div><div className="footer-right"><a href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">Instagram</a><p>{t.footer.privacy}</p></div></footer>
+      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div><div className="footer-right"><a href="https://www.instagram.com/kertsasha/" target="_blank" rel="noreferrer">Instagram</a><br /><a href={telegramUrl} target="_blank" rel="noopener noreferrer">Telegram · @kertsasha</a><p>{t.footer.privacy}</p></div></footer>
     </main>
   )
 }
