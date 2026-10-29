@@ -16,7 +16,7 @@ type Copy = {
   process: { kicker: string; title: string; steps: { number: string; title: string; text: string }[]; cta: string }
   faq: { kicker: string; title: string; items: { q: string; a: string }[] }
   final: { eyebrow: string; title: string; body: string; cta: string; instagram: string }
-  footer: { line: string; privacy: string }
+  footer: { line: string }
 }
 
 const copy: Record<Locale, Copy> = {
@@ -30,7 +30,7 @@ const copy: Record<Locale, Copy> = {
     process: { kicker: '05 · КАК ЭТО ПРОИСХОДИТ', title: 'Три шага к знакомству', steps: [{ number: '01', title: 'Вы пишете', text: 'Расскажите немного о себе и о том, что сейчас важно. Можно на русском, испанском или английском.' }, { number: '02', title: 'Мы созваниваемся', text: 'Задаём вопросы друг другу и понимаем, подходит ли вам мой формат поддержки.' }, { number: '03', title: 'Договариваемся', text: 'Если наши ожидания совпадают, обсуждаем детали, границы и доступность.' }], cta: 'Написать в WhatsApp' },
     faq: { kicker: '06 · ВОПРОСЫ', title: 'То, о чём часто спрашивают', items: [{ q: 'Где вы работаете?', a: 'Я базируюсь в Буэнос-Айресе. Точную географию и формат встреч мы обсуждаем индивидуально в переписке.' }, { q: 'Сколько стоит сопровождение?', a: 'Сопровождение родов — $300, приём у врача — $20. Цены указаны в долларах США.' }, { q: 'Вы сопровождаете на русском языке?', a: 'Да, русский — мой основной язык общения. Также мы можем общаться на испанском или английском.' }, { q: 'Когда лучше написать?', a: 'Можно написать на любом этапе беременности или уже после рождения малыша. Я отвечу и расскажу, могу ли взять ваше сопровождение.' }] },
     final: { eyebrow: 'БУДЕМ НА СВЯЗИ', title: 'Давайте познакомимся', body: 'Вы можете написать мне, рассказать, что вас интересует, и задать вопросы о сопровождении.', cta: 'Обсудить сопровождение', instagram: 'Смотреть Instagram' },
-    footer: { line: 'Поддержка беременности, родов и послеродового периода на русском языке · Buenos Aires', privacy: 'Только необходимая переписка — без форм и лишних данных.' },
+    footer: { line: 'Поддержка беременности, родов и послеродового периода на русском языке · Buenos Aires' },
   },
   es: {
     nav: { about: 'Sobre mí', services: 'Acompañamiento', pricing: 'Precios', faq: 'Preguntas', contact: 'Escribirle a Sasha' },
@@ -42,7 +42,7 @@ const copy: Record<Locale, Copy> = {
     process: { kicker: '05 · CÓMO FUNCIONA', title: 'Tres pasos para conocernos', steps: [{ number: '01', title: 'Me escribís', text: 'Contame un poco sobre vos y qué necesitás hoy. Podemos hablar en ruso, español o inglés.' }, { number: '02', title: 'Conversamos', text: 'Nos hacemos preguntas y vemos si mi forma de acompañar es adecuada para vos.' }, { number: '03', title: 'Acordamos', text: 'Si hay sintonía, conversamos los detalles, los límites y la disponibilidad.' }], cta: 'Escribirme por WhatsApp' },
     faq: { kicker: '06 · PREGUNTAS', title: 'Lo que suelen preguntar', items: [{ q: '¿Dónde trabajás?', a: 'Estoy en Buenos Aires. La zona exacta y el formato de los encuentros los conversamos de manera individual.' }, { q: '¿Cuánto cuesta el acompañamiento?', a: 'El acompañamiento durante el parto cuesta $300 y la consulta con un médico, $20. Los precios están expresados en dólares estadounidenses.' }, { q: '¿Acompañás en ruso?', a: 'Sí, el ruso es mi idioma principal de comunicación. También podemos conversar en español o inglés.' }, { q: '¿Cuándo es mejor escribirte?', a: 'Podés escribirme en cualquier momento del embarazo o después del nacimiento. Te voy a responder y contarte si puedo acompañarte.' }] },
     final: { eyebrow: 'HABLEMOS', title: 'Conozcámonos', body: 'Podés escribirme, contarme qué te interesa y hacerme tus preguntas sobre el acompañamiento.', cta: 'Hablemos del acompañamiento', instagram: 'Ver Instagram' },
-    footer: { line: 'Acompañamiento durante el embarazo, parto y posparto en ruso · Buenos Aires', privacy: 'Solo la conversación necesaria — sin formularios ni datos de más.' },
+    footer: { line: 'Acompañamiento durante el embarazo, parto y posparto en ruso · Buenos Aires' },
   },
   en: {
     nav: { about: 'About', services: 'Support', pricing: 'Prices', faq: 'Questions', contact: 'Write to Sasha' },
@@ -54,7 +54,7 @@ const copy: Record<Locale, Copy> = {
     process: { kicker: '05 · THE PROCESS', title: 'Three steps to meeting', steps: [{ number: '01', title: 'You write', text: 'Tell me a little about yourself and what matters right now. Russian, Spanish or English are all welcome.' }, { number: '02', title: 'We talk', text: 'We ask each other questions and see whether my way of supporting feels right for you.' }, { number: '03', title: 'We agree', text: 'If it feels like a fit, we discuss the details, boundaries and availability.' }], cta: 'Message on WhatsApp' },
     faq: { kicker: '06 · QUESTIONS', title: 'Questions that come up often', items: [{ q: 'Where do you work?', a: 'I am based in Buenos Aires. We can discuss the exact area and meeting format individually.' }, { q: 'How much does support cost?', a: 'Birth support is $300, and a doctor appointment is $20. Prices are listed in US dollars.' }, { q: 'Do you support in Russian?', a: 'Yes, Russian is my primary language. We can also communicate in Spanish or English.' }, { q: 'When is the best time to write?', a: 'You can write at any point during pregnancy or after your baby is born. I will reply and let you know whether I can support you.' }] },
     final: { eyebrow: 'LET’S CONNECT', title: 'Let’s get to know each other', body: 'Write to me, tell me what you are looking for and ask any questions about support.', cta: 'Talk about support', instagram: 'See Instagram' },
-    footer: { line: 'Russian-language pregnancy, birth and postpartum support · Buenos Aires', privacy: 'Only the conversation we need — no forms or unnecessary data.' },
+    footer: { line: 'Russian-language pregnancy, birth and postpartum support · Buenos Aires' },
   },
 }
 
@@ -142,7 +142,7 @@ export default function Page() {
 
       <section className="final-cta"><div><p className="eyebrow">{t.final.eyebrow}</p><h2>{t.final.title}</h2><p>{t.final.body}</p><div className="contact-actions"><a className="contact-action contact-action--whatsapp" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.final.cta}`}><WhatsAppIcon size={18} /><span>{t.final.cta}</span><ArrowUpRight size={15} aria-hidden="true" /></a><a className="contact-action contact-action--telegram" href={telegramUrl} target="_blank" rel="noopener noreferrer"><Send size={16} aria-hidden="true" /><span>Telegram · @kertsasha</span><ArrowUpRight size={15} aria-hidden="true" /></a><a className="contact-action contact-action--instagram" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noopener noreferrer"><Camera size={16} aria-hidden="true" /><span>{t.final.instagram}</span><ArrowUpRight size={15} aria-hidden="true" /></a></div></div><span className="final-mark">SK</span></section>
 
-      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div><div className="footer-right"><div className="footer-contact-actions"><a className="contact-action contact-action--whatsapp" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.final.cta}`}><WhatsAppIcon size={15} /><span>{t.final.cta}</span></a><a className="contact-action contact-action--telegram" href={telegramUrl} target="_blank" rel="noopener noreferrer"><Send size={14} aria-hidden="true" /><span>Telegram · @kertsasha</span></a><a className="contact-action contact-action--instagram" href="https://www.instagram.com/kertsasha/" target="_blank" rel="noopener noreferrer"><Camera size={14} aria-hidden="true" /><span>{t.final.instagram}</span></a></div><p>{t.footer.privacy}</p></div></footer>
+      <footer className="site-footer"><div><a className="wordmark footer-mark" href="#top">sasha<span>kerts</span></a><p>{t.footer.line}</p></div></footer>
     </main>
   )
 }
