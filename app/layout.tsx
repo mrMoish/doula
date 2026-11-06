@@ -25,7 +25,7 @@ const structuredData = {
         jobTitle: 'Doula',
         image: socialImage,
         telephone: '+5491132849594',
-        knowsLanguage: ['Russian', 'Spanish', 'English'],
+        knowsLanguage: ['Russian', 'Spanish'],
         sameAs: ['https://www.instagram.com/kertsasha/', 'https://t.me/kertsasha'],
       },
       offers: { '@type': 'Offer', price: 300, priceCurrency: 'USD' },
