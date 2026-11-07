@@ -4,7 +4,7 @@ import './globals.css'
 
 const socialImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg'
 const pageTitle = 'Саша Кертс — русскоязычная доула в Буэнос-Айресе'
-const pageDescription = 'Поддержка беременности, родов и послеродового периода на русском языке в Буэнос-Айресе. Сопровождение родов — 300 USD; приём у врача — 20 USD.'
+const pageDescription = 'Поддержка беременности и родов на русском языке в Буэнос-Айресе. Сопровождение родов — 300 USD; приём у врача — 20 USD.'
 
 const structuredData = {
   '@context': 'https://schema.org',
