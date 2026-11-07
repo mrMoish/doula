@@ -9,7 +9,7 @@ export const copy = {
     navLabels: ['about', 'support', 'process', 'faq'],
     eyebrow: 'БУЭНОС-АЙРЕС · АРГЕНТИНА',
     heroTitle: 'Рождение ребёнка — большой путь. Не обязательно проходить его одной.',
-    heroText: 'Бережная поддержка на русском языке во время беременности, родов и после рождения малыша — в Буэнос-Айресе.',
+    heroText: 'Бережная поддержка на русском языке во время беременности и родов — в Буэнос-Айресе.',
     meet: 'Познакомиться',
     discuss: 'Обсудить сопровождение ↗',
     scroll: 'Листать вниз',
@@ -22,7 +22,6 @@ export const copy = {
     services: [
       ['01', 'Беременность', 'Разговоры, подготовка и эмоциональная опора в ожидании малыша.'],
       ['02', 'Роды', 'Непрерывное бережное присутствие и поддержка ваших решений во время родов.'],
-      ['03', 'После рождения', 'Мягкий переход в новую жизнь и внимание к вашим чувствам после рождения малыша.'],
     ],
     educationEyebrow: 'ВАЖНО ЗНАТЬ',
     educationTitle: 'Беременность и роды в новой стране — с поддержкой на родном языке.',
@@ -44,7 +43,7 @@ export const copy = {
     finalTitle: 'Вам не нужно проходить этот путь одной.',
     finalText: 'Вы можете написать мне, рассказать, что вас интересует, и задать вопросы о сопровождении.',
     instagram: 'Instagram ↗',
-    footer: 'Поддержка до, во время и после рождения — на русском языке в Буэнос-Айресе.',
+    footer: 'Поддержка во время беременности и родов — на русском языке в Буэнос-Айресе.',
     disclaimer: 'Информация на сайте носит общий характер и не заменяет профессиональную медицинскую помощь.',
   },
   es: {
@@ -53,7 +52,7 @@ export const copy = {
     navLabels: ['about', 'support', 'process', 'faq'],
     eyebrow: 'BUENOS AIRES · ARGENTINA',
     heroTitle: 'Nacer es un gran viaje. No tenés que atravesarlo sola.',
-    heroText: 'Acompañamiento cálido en ruso durante el embarazo, el nacimiento y el posparto — en Buenos Aires.',
+    heroText: 'Acompañamiento cálido en ruso durante el embarazo y el parto — en Buenos Aires.',
     meet: 'Conoceme',
     discuss: 'Hablemos del acompañamiento ↗',
     scroll: 'Seguir leyendo',
@@ -63,7 +62,7 @@ export const copy = {
     aboutNote: 'Calidez, respeto y espacio para elegir.',
     servicesEyebrow: 'EN QUÉ PUEDO ACOMPAÑARTE',
     servicesTitle: 'Apoyo en cada etapa.',
-    services: [['01', 'Embarazo', 'Conversaciones, preparación y sostén emocional mientras esperás a tu bebé.'], ['02', 'Nacimiento', 'Presencia continua y acompañamiento respetuoso de tus decisiones durante el parto.'], ['03', 'Posparto', 'Un pasaje amable a la nueva vida y atención a lo que sentís después del nacimiento.']],
+    services: [['01', 'Embarazo', 'Conversaciones, preparación y sostén emocional mientras esperás a tu bebé.'], ['02', 'Nacimiento', 'Presencia continua y acompañamiento respetuoso de tus decisiones durante el parto.']],
     educationEyebrow: 'PARA TENER EN CUENTA',
     educationTitle: 'Embarazo y nacimiento en un país nuevo — con apoyo en tu idioma.',
     educationText: 'Una doula no es médica ni partera. No diagnostica, no indica tratamientos ni reemplaza la atención médica o psicológica. Puede estar a tu lado para que puedas hablar de tus sentimientos, preguntas y preferencias en un idioma que te resulte claro.',
@@ -79,7 +78,7 @@ export const copy = {
     finalTitle: 'No tenés que atravesar este camino sola.',
     finalText: 'Podés escribirme, contarme qué te interesa y hacerme preguntas sobre el acompañamiento.',
     instagram: 'Instagram ↗',
-    footer: 'Acompañamiento antes, durante y después del nacimiento — en ruso, en Buenos Aires.',
+    footer: 'Acompañamiento durante el embarazo y el parto — en ruso, en Buenos Aires.',
     disclaimer: 'La información de este sitio es general y no reemplaza la atención médica profesional.'
   },
   en: {
@@ -88,7 +87,7 @@ export const copy = {
     navLabels: ['about', 'support', 'process', 'faq'],
     eyebrow: 'BUENOS AIRES · ARGENTINA',
     heroTitle: 'Birth is a great journey. You do not have to walk it alone.',
-    heroText: 'Gentle support in Russian through pregnancy, birth and the early days with your baby — in Buenos Aires.',
+    heroText: 'Gentle support in Russian through pregnancy and birth — in Buenos Aires.',
     meet: 'Meet Sasha',
     discuss: 'Discuss support ↗',
     scroll: 'Scroll to explore',
@@ -98,7 +97,7 @@ export const copy = {
     aboutNote: 'Warmth, respect and room for your choices.',
     servicesEyebrow: 'HOW I CAN BE THERE',
     servicesTitle: 'Support for every stage.',
-    services: [['01', 'Pregnancy', 'Conversations, preparation and emotional support while you wait for your baby.'], ['02', 'Birth', 'Continuous, gentle presence and support for your choices during birth.'], ['03', 'After birth', 'A softer transition into a new life, with space for how you are feeling.']],
+    services: [['01', 'Pregnancy', 'Conversations, preparation and emotional support while you wait for your baby.'], ['02', 'Birth', 'Continuous, gentle presence and support for your choices during birth.']],
     educationEyebrow: 'A CLEAR NOTE',
     educationTitle: 'Pregnancy and birth in a new country — supported in your own language.',
     educationText: 'A doula is not a doctor or midwife. She does not diagnose, prescribe treatment or replace medical or psychological care. A doula can be alongside you so you can talk about your feelings, questions and preferences in a language that feels clear.',
@@ -114,7 +113,7 @@ export const copy = {
     finalTitle: 'You do not have to walk this path alone.',
     finalText: 'Write to me, share what is on your mind and ask any questions about support.',
     instagram: 'Instagram ↗',
-    footer: 'Support before, during and after birth — in Russian, in Buenos Aires.',
+    footer: 'Pregnancy and birth support — in Russian, in Buenos Aires.',
     disclaimer: 'Information on this website is general and does not replace professional medical care.'
   }
 } as const
