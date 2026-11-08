@@ -77,4 +77,4 @@
   .price { margin-top: 30px; }
   .footer { align-items: flex-start; flex-direction: column; }
 }
-@media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior: auto !important; } }
+@media (prefers-reduced-motion: reduce) { .page, .page *, .page *::before, .page *::after { scroll-behavior: auto !important; } }
