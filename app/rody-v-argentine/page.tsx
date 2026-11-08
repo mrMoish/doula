@@ -61,6 +61,25 @@ const questions = [
   },
 ]
 
+const testimonials = [
+  {
+    quote: 'Саша очень чуткая, доброжелательная и тёплая. Она всегда искренне старается помочь…',
+    detail: 'О сопровождении на родах и встречах с врачами',
+  },
+  {
+    quote: 'Спасибо большое тебе ещё раз 🫶 ты создана быть доулой😊 так замечательно помогала !!',
+    detail: 'Сообщение с благодарностью',
+  },
+  {
+    quote: 'Человек-солнышко, настолько заботливый, настолько ответственный, чуткий 🥹',
+    detail: 'О заботе и помощи с подготовкой к родам',
+  },
+  {
+    quote: 'Ооо, спасибо, Саша🥰 Мы тоже рады, что именно ты у нас была)',
+    detail: 'Сообщение после сопровождения',
+  },
+]
+
 export default function BirthInArgentinaPage() {
   return (
     <main className={styles.page}>
@@ -125,6 +144,43 @@ export default function BirthInArgentinaPage() {
             <h3>Во время родов</h3>
             <p>Я могу быть рядом, поддерживать вас и помогать выразить пожелания команде. Медицинские процедуры и решения остаются в ведении специалистов.</p>
           </article>
+        </div>
+      </section>
+
+      <section className={styles.aboutSection} id="about-sasha" aria-labelledby="about-sasha-title">
+        <div className={styles.aboutPortrait}>
+          <Image
+            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg"
+            alt="Саша Кертс — русскоязычная доула в Буэнос-Айресе"
+            fill
+            sizes="(max-width: 800px) 88vw, 36vw"
+          />
+        </div>
+        <div className={styles.aboutCopy}>
+          <p className={styles.eyebrow}>Знакомство · О Саше</p>
+          <h2 id="about-sasha-title">Кто будет рядом с вами на родах?</h2>
+          <p>Меня зовут Саша Кертс. Я русскоязычная доула в Буэнос-Айресе. Помогаю женщинам подготовиться к родам и сопровождаю их в этот день. Мы можем познакомиться дистанционно, ещё до вашего приезда в Аргентину.</p>
+          <p>Мне важно услышать, как вы представляете роды, что вас волнует и какой помощи вы ждёте. А вы сможете решить, подхожу ли я вам.</p>
+          <Link className={styles.aboutLink} href="/#about">
+            Подробнее обо мне <span aria-hidden="true">↗</span>
+          </Link>
+        </div>
+      </section>
+
+      <section className={styles.testimonialsSection} id="reviews" aria-labelledby="testimonials-title">
+        <div className={styles.testimonialsHeading}>
+          <p className={styles.eyebrow}>Отзывы</p>
+          <h2 id="testimonials-title">Что говорят женщины, которых я сопровождала</h2>
+          <p>Слова из сообщений после родов и встреч. Публикую небольшие фрагменты без имён.</p>
+        </div>
+        <div className={styles.testimonialsGrid}>
+          {testimonials.map(({ quote, detail }) => (
+            <figure className={styles.testimonialCard} key={quote}>
+              <span className={styles.quoteMark} aria-hidden="true">“</span>
+              <blockquote>{quote}</blockquote>
+              <figcaption>{detail}</figcaption>
+            </figure>
+          ))}
         </div>
       </section>
 
