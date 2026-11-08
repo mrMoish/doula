@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { ArrowUpRight, Camera, ChevronDown, Menu, Send, X } from 'lucide-react'
 
 type Locale = 'ru' | 'es' | 'en'
@@ -107,6 +108,15 @@ export default function Page() {
         <div className="hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.title}</h1><p className="hero-subtitle">{t.hero.subtitle}</p><p className="hero-body">{t.hero.body}</p><div className="button-row"><button className="button button-dark" onClick={() => goTo('about')}>{t.hero.primary} <ArrowUpRight size={16} /></button><a className="text-link" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.hero.secondary}`}><WhatsAppIcon size={16} /><span>{t.hero.secondary}</span><ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
         <div className="hero-image"><Image src="/images/sasha-hero.png" alt={t.hero.imageAlt} fill priority sizes="(max-width: 768px) 100vw, 54vw" /></div>
         <span className="hero-index">01 / 08</span>
+      </section>
+
+      <section className="travel-teaser" aria-labelledby="travel-teaser-title">
+        <div>
+          <p className="eyebrow">ДО ПРИЕЗДА В АРГЕНТИНУ · ONLINE</p>
+          <h2 id="travel-teaser-title">Планируете приехать в Аргентину для родов?</h2>
+          <p>С Сашей можно познакомиться дистанционно ещё до поездки, обсудить ваши вопросы и возможность сопровождения в Буэнос-Айресе.</p>
+        </div>
+        <Link className="travel-teaser-link" href="/rody-v-argentine">Подробнее о сопровождении <ArrowUpRight size={17} aria-hidden="true" /></Link>
       </section>
 
       <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame"><Image src={portraitImageSrc} alt={t.intro.imageAlt} fill sizes="(max-width: 768px) 88vw, 38vw" /></div><div className="intro-copy"><h2>{t.intro.title}</h2><p>{t.intro.body}</p><p className="italic-note">{t.intro.note}</p></div></section>
