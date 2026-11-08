@@ -97,3 +97,12 @@
 .testimonialCard figcaption { color: #62665e; font-size: 12px; line-height: 1.5; margin-top: auto; }
 @media (max-width: 900px) { .aboutSection { grid-template-columns: 1fr; padding: 75px 7vw; gap: 42px; } .aboutPortrait { min-height: 460px; max-width: 520px; } .testimonialsSection { padding: 75px 7vw; } }
 @media (max-width: 600px) { .aboutPortrait { min-height: 370px; } .testimonialsGrid { grid-template-columns: 1fr; gap: 14px; margin-top: 38px; } .testimonialCard { min-height: 210px; } }
+
+/* Long, source-faithful testimonials stay grouped by original message. */
+.testimonialTop { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; width: 100%; }
+.testimonialLabel { color: var(--rust); font-size: 11px; letter-spacing: .1em; text-transform: uppercase; line-height: 1.4; }
+.testimonialTop .quoteMark { margin: 4px 0 24px; line-height: .5; }
+.testimonialCard blockquote { margin: 0 0 32px; width: 100%; }
+.quoteFragment { font: 400 clamp(19px,1.65vw,24px)/1.48 var(--serif); letter-spacing: -.015em; margin: 0 0 23px; }
+.quoteFragment:last-child { margin-bottom: 0; }
+@media (max-width: 600px) { .quoteFragment { font-size: 21px; } }
