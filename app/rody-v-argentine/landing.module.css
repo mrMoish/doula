@@ -78,3 +78,22 @@
   .footer { align-items: flex-start; flex-direction: column; }
 }
 @media (prefers-reduced-motion: reduce) { .page, .page *, .page *::before, .page *::after { scroll-behavior: auto !important; } }
+
+/* About Sasha and client notes */
+.aboutSection { display: grid; grid-template-columns: minmax(0, 40%) minmax(0, 1fr); gap: clamp(35px,7vw,120px); align-items: center; padding: clamp(80px,9vw,145px) 9vw; background: var(--paper); }
+.aboutPortrait { position: relative; min-height: 550px; background: var(--cream); overflow: hidden; }
+.aboutPortrait img { object-fit: cover; object-position: center 38%; filter: saturate(.66) sepia(.09) contrast(.98); }
+.aboutCopy h2, .testimonialsHeading h2 { font-family: var(--serif); font-size: clamp(39px,4.5vw,65px); font-weight: 400; letter-spacing: -.05em; line-height: 1.07; margin: 0 0 28px; }
+.aboutCopy > p:not(.eyebrow) { color: #62665e; font-size: 16px; line-height: 1.75; max-width: 560px; }
+.aboutLink { display: inline-flex; align-items: center; gap: 12px; margin-top: 24px; padding-bottom: 8px; border-bottom: 1px solid currentColor; font-size: 12px; }
+.aboutLink:hover { color: var(--rust); }
+.testimonialsSection { background: #e8e2d8; padding: clamp(80px,9vw,145px) 9vw; }
+.testimonialsHeading { max-width: 760px; }
+.testimonialsHeading > p:last-child { color: #62665e; line-height: 1.65; }
+.testimonialsGrid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 18px; margin-top: 60px; }
+.testimonialCard { margin: 0; padding: clamp(28px,3vw,46px); min-height: 260px; background: var(--paper); display: flex; flex-direction: column; align-items: flex-start; }
+.quoteMark { font: 70px/.65 var(--serif); color: var(--rust); margin-bottom: 30px; }
+.testimonialCard blockquote { margin: 0 0 34px; font: 400 clamp(21px,2vw,29px)/1.37 var(--serif); letter-spacing: -.02em; }
+.testimonialCard figcaption { color: #62665e; font-size: 12px; line-height: 1.5; margin-top: auto; }
+@media (max-width: 900px) { .aboutSection { grid-template-columns: 1fr; padding: 75px 7vw; gap: 42px; } .aboutPortrait { min-height: 460px; max-width: 520px; } .testimonialsSection { padding: 75px 7vw; } }
+@media (max-width: 600px) { .aboutPortrait { min-height: 370px; } .testimonialsGrid { grid-template-columns: 1fr; gap: 14px; margin-top: 38px; } .testimonialCard { min-height: 210px; } }
