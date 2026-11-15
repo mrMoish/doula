@@ -132,6 +132,7 @@ export default function BirthInArgentinaPage() {
             priority
             sizes="(max-width: 800px) 100vw, 48vw"
           />
+          <p className={styles.photoCaption}>Я рядом в один из самых важных моментов вашей жизни. Поддерживаю во время родов, помогаю в общении с медицинской командой и остаюсь рядом в первые минуты после рождения малыша.</p>
         </div>
       </section>
 
