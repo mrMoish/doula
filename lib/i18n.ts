@@ -165,7 +165,7 @@ export function isPrimary(locale: Locale) { return locale === 'ru' }
 
 export function siteDescription(locale: Locale) { return copy[locale].heroText }
 
-export function siteTitle(locale: Locale) { return locale === 'ru' ? 'Саша Кертс — доула в Буэнос-Айресе' : locale === 'es' ? 'Sasha Kerts — doula en Buenos Aires' : 'Sasha Kerts — doula in Buenos Aires' }
+export function siteTitle(locale: Locale) { return locale === 'ru' ? 'Саша Керт — доула в Буэнос-Айресе' : locale === 'es' ? 'Sasha Kert — doula en Buenos Aires' : 'Sasha Kert — doula in Buenos Aires' }
 
 export function canonicalUrl(locale: Locale) { return localizedPath(locale) }
 
