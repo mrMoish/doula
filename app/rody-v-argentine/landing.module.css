@@ -106,3 +106,21 @@
 .quoteFragment { font: 400 clamp(19px,1.65vw,24px)/1.48 var(--serif); letter-spacing: -.015em; margin: 0 0 23px; }
 .quoteFragment:last-child { margin-bottom: 0; }
 @media (max-width: 600px) { .quoteFragment { font-size: 21px; } }
+
+
+.photoCaption {
+  position: absolute;
+  bottom: 22px;
+  left: 22px;
+  right: 22px;
+  z-index: 1;
+  max-width: 510px;
+  margin: 0;
+  padding: 18px 22px;
+  border-radius: 3px;
+  background: rgba(250, 246, 240, .94);
+  color: #44473f;
+  font: 400 clamp(15px, 1.4vw, 19px)/1.45 var(--serif);
+  box-shadow: 0 4px 25px rgba(0, 0, 0, .09);
+}
+@media (max-width: 600px) { .photoCaption { bottom: 12px; left: 12px; right: 12px; padding: 12px 15px; font-size: 14px; } }
