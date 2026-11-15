@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { ArrowUpRight } from 'lucide-react'
 import type { Metadata } from 'next'
 import styles from './landing.module.css'
 
@@ -37,7 +38,7 @@ const whatsappUrl =
 const questions = [
   {
     question: 'Можно ли связаться с доулой ещё до приезда в Аргентину?',
-    answer: 'Да. Мы можем познакомиться и обсудить ваши вопросы дистанционно, пока вы ещё в другой стране. Формат, время и условия разговора согласуем в переписке.',
+    answer: 'Да. Мы можем познакомиться и обсудить ваши вопросы дистанционно, пока вы ещё в другой стране. Первое дистанционное знакомство бесплатно. Время и формат согласуем в переписке.',
   },
   {
     question: 'С какими вопросами вы можете обратиться ко мне заранее?',
@@ -53,7 +54,7 @@ const questions = [
   },
   {
     question: 'Сколько стоит моё сопровождение родов?',
-    answer: 'Стоимость моего сопровождения родов — 300 USD. Формат и стоимость дистанционной консультации до приезда мы обсудим отдельно. Я заранее расскажу, что входит в сопровождение.',
+    answer: 'Стоимость моего сопровождения родов — 300 USD. Первое дистанционное знакомство бесплатно. Я заранее расскажу, что входит в сопровождение, а условия дополнительных консультаций обсудим отдельно.',
   },
   {
     question: 'Заменяю ли я врача или акушерку?',
@@ -118,9 +119,9 @@ export default function BirthInArgentinaPage() {
           <p className={styles.eyebrow}>Саша Керт · Буэнос-Айрес, Аргентина</p>
           <h1>Роды в Аргентине с русскоязычной доулой</h1>
           <p className={styles.heroLead}>Планируете приехать рожать в Буэнос-Айрес? Давайте познакомимся ещё до поездки.</p>
-          <p className={styles.heroText}>Меня зовут Саша Керт. Я сопровождаю женщин во время беременности и родов. Мы можем созвониться дистанционно, пока вы ещё в России или другой стране, и спокойно обсудить, какая поддержка вам нужна.</p>
+          <p className={styles.heroText}>Меня зовут Саша Керт. Я сопровождаю женщин во время беременности и родов. Мы можем бесплатно познакомиться по видеосвязи, пока вы ещё в России или другой стране, и спокойно обсудить, какая поддержка вам нужна.</p>
           <div className={styles.actions}>
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.primaryAction}>Обсудить сопровождение <span aria-hidden="true">↗</span></a>
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.primaryAction}>Обсудить сопровождение <ArrowUpRight size={16} aria-hidden="true" /></a>
             <a href="#before-arrival" className={styles.secondaryAction}>Что можно сделать до приезда</a>
           </div>
         </div>
@@ -141,10 +142,10 @@ export default function BirthInArgentinaPage() {
           <h2>Начать можно из другой страны</h2>
         </div>
         <div className={styles.sectionBody}>
-          <p className={styles.lead}>Не обязательно ждать прилёта, чтобы задать первые вопросы.</p>
+          <p className={styles.lead}>Не обязательно ждать прилёта, чтобы задать первые вопросы. Первое дистанционное знакомство бесплатно.</p>
           <p>Если вы планируете роды в Аргентине, можно заранее написать мне и договориться о дистанционном разговоре. Вы расскажете, на каком сроке находитесь, когда предполагаете приехать и что для вас важно во время родов.</p>
           <p>Обсудим ваши ожидания, мою роль и возможность сопровождения в Буэнос-Айресе. Если уже выбрали клинику или врача, сможем поговорить о вопросах, которые вы хотите задать медицинской команде.</p>
-          <p className={styles.smallNote}>Дистанционное знакомство не заменяет медицинскую консультацию. Его формат и стоимость согласуются отдельно.</p>
+          <p className={styles.smallNote}>Первое дистанционное знакомство бесплатно. Оно не заменяет медицинскую консультацию. Формат и время встречи согласуем в переписке.</p>
         </div>
       </section>
 
@@ -192,7 +193,7 @@ export default function BirthInArgentinaPage() {
           <p>Меня зовут Саша Керт. Я русскоязычная доула в Буэнос-Айресе. Помогаю женщинам подготовиться к родам и сопровождаю их в этот день. Мы можем познакомиться дистанционно, ещё до вашего приезда в Аргентину.</p>
           <p>Мне важно услышать, как вы представляете роды, что вас волнует и какой помощи вы ждёте. А вы сможете решить, подхожу ли я вам.</p>
           <Link className={styles.aboutLink} href="/#about">
-            Подробнее обо мне <span aria-hidden="true">↗</span>
+            Подробнее обо мне <ArrowUpRight size={16} aria-hidden="true" />
           </Link>
         </div>
       </section>
@@ -273,7 +274,7 @@ export default function BirthInArgentinaPage() {
         <p className={styles.eyebrow}>Можно написать уже сейчас</p>
         <h2>Поговорим о ваших планах?</h2>
         <p>Неважно, в какой стране вы сейчас находитесь. Напишите мне в WhatsApp, расскажите о предполагаемой дате родов и задайте первый вопрос.</p>
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.lastAction}>Написать мне в WhatsApp <span aria-hidden="true">↗</span></a>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.lastAction}>Написать мне в WhatsApp <ArrowUpRight size={16} aria-hidden="true" /></a>
       </section>
 
       <footer className={styles.footer}>
