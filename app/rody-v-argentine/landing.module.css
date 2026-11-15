@@ -109,5 +109,5 @@
 
 
 .birthPhoto { margin: 56px auto 0; width: min(100%, 680px); }
-.birthPhoto img { display: block; width: 100%; height: auto; max-height: 760px; object-fit: cover; object-position: center 35%; border-radius: 3px; }
+.birthPhoto img { display: block; width: 100%; height: auto; max-height: 760px; object-fit: cover; object-position: center 35%; border-radius: 3px; filter: saturate(.66) sepia(.09) contrast(.98); }
 @media (max-width: 600px) { .birthPhoto { margin-top: 36px; } .birthPhoto img { max-height: none; } }
