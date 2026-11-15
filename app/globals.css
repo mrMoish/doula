@@ -70,3 +70,10 @@ a { color: inherit; text-decoration: none; }
   .hero-slide-controls button { width: 38px; height: 38px; }
 }
 @media (prefers-reduced-motion: reduce) { .hero-slide { transition: none; } }
+
+/* Photo slider belongs to the second image in the About Me section. */
+.portrait-slideshow { overflow: hidden; }
+.portrait-slideshow .hero-slide img { object-fit: cover; object-position: center 38%; transform: none; filter: none; }
+.portrait-slideshow .hero-slide:first-child img { filter: saturate(.55) sepia(.14) contrast(.96) brightness(1.03); }
+.portrait-slideshow .hero-slide-controls { bottom: 20px; right: 20px; }
+@media (max-width: 600px) { .portrait-slideshow .hero-slide-controls { bottom: 12px; right: 12px; } }
