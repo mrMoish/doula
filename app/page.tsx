@@ -186,9 +186,9 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
 export default function Page() {
   const [locale, setLocale] = useState<Locale>('ru')
   const [menuOpen, setMenuOpen] = useState(false)
-  const [heroSlide, setHeroSlide] = useState(0)
-  const heroImages = [
-    { src: '/images/sasha-hero.png', alt: tHeroAlt(locale) },
+  const [portraitSlide, setPortraitSlide] = useState(0)
+  const portraitImages = [
+    { src: portraitImageSrc, alt: copy[locale].intro.imageAlt },
     { src: '/images/sasha-kert-doula-newborn-buenos-aires.jpeg', alt: tNewbornAlt(locale) },
   ]
   const t = copy[locale]
@@ -216,18 +216,7 @@ export default function Page() {
 
       <section className="hero" id="top">
         <div className="hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.title}</h1><p className="hero-subtitle">{t.hero.subtitle}</p><p className="hero-body">{t.hero.body}</p><div className="button-row"><button className="button button-dark" onClick={() => goTo('about')}>{t.hero.primary} <ArrowUpRight size={16} /></button><a className="text-link" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.hero.secondary}`}><WhatsAppIcon size={16} /><span>{t.hero.secondary}</span><ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
-        <div className="hero-image hero-slideshow" aria-label={locale === 'ru' ? 'Фотографии сопровождения родов' : locale === 'es' ? 'Fotografías de acompañamiento del parto' : 'Birth support photos'}>
-          {heroImages.map((photo, index) => (
-            <div className={`hero-slide ${heroSlide === index ? 'hero-slide-active' : ''}`} key={photo.src} aria-hidden={heroSlide !== index}>
-              <Image src={photo.src} alt={heroSlide === index ? photo.alt : ''} fill priority={index === 0} sizes="(max-width: 768px) 100vw, 54vw" />
-            </div>
-          ))}
-          <div className="hero-slide-controls">
-            <button type="button" onClick={() => setHeroSlide((heroSlide + heroImages.length - 1) % heroImages.length)} aria-label={locale === 'ru' ? 'Предыдущее фото' : locale === 'es' ? 'Foto anterior' : 'Previous photo'}><ChevronLeft size={24} /></button>
-            <span aria-live="polite">{String(heroSlide + 1).padStart(2, '0')} / {String(heroImages.length).padStart(2, '0')}</span>
-            <button type="button" onClick={() => setHeroSlide((heroSlide + 1) % heroImages.length)} aria-label={locale === 'ru' ? 'Следующее фото' : locale === 'es' ? 'Foto siguiente' : 'Next photo'}><ChevronRight size={24} /></button>
-          </div>
-        </div>
+        <div className="hero-image"><Image src="/images/sasha-hero.png" alt={tHeroAlt(locale)} fill priority sizes="(max-width: 768px) 100vw, 54vw" /></div>
         <span className="hero-index">01 / 08</span>
       </section>
 
@@ -248,7 +237,18 @@ export default function Page() {
         <Link className="travel-teaser-link" href="/rody-v-argentine">{supportJourney[locale].link} <ArrowUpRight size={17} aria-hidden="true" /></Link>
       </section>
 
-      <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame"><Image src={portraitImageSrc} alt={t.intro.imageAlt} fill sizes="(max-width: 768px) 88vw, 38vw" /></div><div className="intro-copy"><h2>{t.intro.title}</h2>{t.intro.body.split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}{t.intro.note && <p className="italic-note">{t.intro.note}</p>}</div></section>
+      <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame portrait-slideshow" aria-label={locale === 'ru' ? 'Фотографии Саши' : locale === 'es' ? 'Fotos de Sasha' : 'Photos of Sasha'}>
+          {portraitImages.map((photo, index) => (
+            <div className={`hero-slide ${portraitSlide === index ? 'hero-slide-active' : ''}`} key={photo.src} aria-hidden={portraitSlide !== index}>
+              <Image src={photo.src} alt={portraitSlide === index ? photo.alt : ''} fill sizes="(max-width: 768px) 88vw, 38vw" />
+            </div>
+          ))}
+          <div className="hero-slide-controls">
+            <button type="button" onClick={() => setPortraitSlide((portraitSlide + portraitImages.length - 1) % portraitImages.length)} aria-label={locale === 'ru' ? 'Предыдущее фото' : locale === 'es' ? 'Foto anterior' : 'Previous photo'}><ChevronLeft size={24} /></button>
+            <span aria-live="polite">{String(portraitSlide + 1).padStart(2, '0')} / {String(portraitImages.length).padStart(2, '0')}</span>
+            <button type="button" onClick={() => setPortraitSlide((portraitSlide + 1) % portraitImages.length)} aria-label={locale === 'ru' ? 'Следующее фото' : locale === 'es' ? 'Foto siguiente' : 'Next photo'}><ChevronRight size={24} /></button>
+          </div>
+        </div><div className="intro-copy"><h2>{t.intro.title}</h2>{t.intro.body.split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}{t.intro.note && <p className="italic-note">{t.intro.note}</p>}</div></section>
 
       <section className="services section-pad" id="services"><div className="section-heading"><p className="eyebrow">{t.services.kicker}</p><h2>{t.services.title}</h2><p>{t.services.intro}</p></div><div className="service-grid">{t.services.items.map((item) => <article className="service-card" key={item.number}><span className="card-number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p><span className="card-line" /></article>)}</div></section>
 
