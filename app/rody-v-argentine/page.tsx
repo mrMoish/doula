@@ -166,6 +166,15 @@ export default function BirthInArgentinaPage() {
             <p>Я могу быть рядом, поддерживать вас и помогать выразить пожелания команде. Медицинские процедуры и решения остаются в ведении специалистов.</p>
           </article>
         </div>
+        <figure className={styles.birthPhoto}>
+          <Image
+            src="/images/sasha-kert-doula-newborn-buenos-aires.jpeg"
+            alt="Доула Саша Керт держит новорождённого малыша в родильном отделении Буэнос-Айреса"
+            width={1056}
+            height={1408}
+            sizes="(max-width: 800px) 100vw, 65vw"
+          />
+        </figure>
       </section>
 
       <section className={styles.aboutSection} id="about-sasha" aria-labelledby="about-sasha-title">
