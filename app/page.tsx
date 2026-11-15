@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowUpRight, Camera, ChevronDown, Menu, Send, X } from 'lucide-react'
+import { ArrowUpRight, Camera, ChevronDown, ChevronLeft, ChevronRight, Menu, Send, X } from 'lucide-react'
 
 type Locale = 'ru' | 'es' | 'en'
 
@@ -163,6 +163,18 @@ const whatsappUrl = (locale: Locale) =>
 const portraitImageSrc = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg'
 const telegramUrl = 'https://t.me/kertsasha'
 
+function tHeroAlt(locale: Locale) {
+  return copy[locale].hero.imageAlt
+}
+
+function tNewbornAlt(locale: Locale) {
+  return {
+    ru: 'Саша Керт с новорождённым малышом в родильном отделении Буэнос-Айреса',
+    es: 'Sasha Kert con un bebé recién nacido en una maternidad de Buenos Aires',
+    en: 'Sasha Kert holding a newborn baby in a Buenos Aires maternity ward',
+  }[locale]
+}
+
 function WhatsAppIcon({ size = 18 }: { size?: number }) {
   return (
     <svg className="whatsapp-icon" viewBox="0 0 24 24" width={size} height={size} fill="currentColor" aria-hidden="true">
@@ -174,6 +186,11 @@ function WhatsAppIcon({ size = 18 }: { size?: number }) {
 export default function Page() {
   const [locale, setLocale] = useState<Locale>('ru')
   const [menuOpen, setMenuOpen] = useState(false)
+  const [heroSlide, setHeroSlide] = useState(0)
+  const heroImages = [
+    { src: '/images/sasha-hero.png', alt: tHeroAlt(locale) },
+    { src: '/images/sasha-kert-doula-newborn-buenos-aires.jpeg', alt: tNewbornAlt(locale) },
+  ]
   const t = copy[locale]
 
   const goTo = (id: string) => { setMenuOpen(false); document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' }) }
@@ -199,7 +216,18 @@ export default function Page() {
 
       <section className="hero" id="top">
         <div className="hero-copy"><p className="eyebrow">{t.hero.eyebrow}</p><h1>{t.hero.title}</h1><p className="hero-subtitle">{t.hero.subtitle}</p><p className="hero-body">{t.hero.body}</p><div className="button-row"><button className="button button-dark" onClick={() => goTo('about')}>{t.hero.primary} <ArrowUpRight size={16} /></button><a className="text-link" href={whatsappUrl(locale)} target="_blank" rel="noopener noreferrer" aria-label={`WhatsApp · ${t.hero.secondary}`}><WhatsAppIcon size={16} /><span>{t.hero.secondary}</span><ArrowUpRight size={16} aria-hidden="true" /></a></div></div>
-        <div className="hero-image"><Image src="/images/sasha-hero.png" alt={t.hero.imageAlt} fill priority sizes="(max-width: 768px) 100vw, 54vw" /></div>
+        <div className="hero-image hero-slideshow" aria-label={locale === 'ru' ? 'Фотографии сопровождения родов' : locale === 'es' ? 'Fotografías de acompañamiento del parto' : 'Birth support photos'}>
+          {heroImages.map((photo, index) => (
+            <div className={`hero-slide ${heroSlide === index ? 'hero-slide-active' : ''}`} key={photo.src} aria-hidden={heroSlide !== index}>
+              <Image src={photo.src} alt={heroSlide === index ? photo.alt : ''} fill priority={index === 0} sizes="(max-width: 768px) 100vw, 54vw" />
+            </div>
+          ))}
+          <div className="hero-slide-controls">
+            <button type="button" onClick={() => setHeroSlide((heroSlide + heroImages.length - 1) % heroImages.length)} aria-label={locale === 'ru' ? 'Предыдущее фото' : locale === 'es' ? 'Foto anterior' : 'Previous photo'}><ChevronLeft size={24} /></button>
+            <span aria-live="polite">{String(heroSlide + 1).padStart(2, '0')} / {String(heroImages.length).padStart(2, '0')}</span>
+            <button type="button" onClick={() => setHeroSlide((heroSlide + 1) % heroImages.length)} aria-label={locale === 'ru' ? 'Следующее фото' : locale === 'es' ? 'Foto siguiente' : 'Next photo'}><ChevronRight size={24} /></button>
+          </div>
+        </div>
         <span className="hero-index">01 / 08</span>
       </section>
 
