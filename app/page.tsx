@@ -59,6 +59,99 @@ const copy: Record<Locale, Copy> = {
   },
 }
 
+const supportJourney = {
+  ru: {
+    eyebrow: 'ПОДДЕРЖКА НА КАЖДОМ ЭТАПЕ',
+    title: 'От подготовки к приезду до первых дней с малышом',
+    link: 'Подробнее о сопровождении',
+    stages: [
+      { title: 'До приезда в Аргентину', points: [
+        'Первичная консультация и знакомство.',
+        'Помощь с выбором клиники и врача.',
+        'Информация о медицинской системе Аргентины.',
+        'Подготовка к беременности, родам и переезду.',
+      ] },
+      { title: 'Во время беременности в Аргентине', points: [
+        'Сопровождение на приёмах у врачей.',
+        'Перевод и помощь в коммуникации с медицинским персоналом.',
+        'Помощь с обследованиями, направлениями и записями.',
+        'Организационная поддержка на протяжении беременности.',
+      ] },
+      { title: 'Поддержка во время родов', points: [
+        'Сопровождение в роддоме.',
+        'Помощь в общении с врачами и медицинской командой.',
+        'Перевод информации и рекомендаций.',
+        'Эмоциональная поддержка женщины до и во время родов.',
+      ] },
+      { title: 'После рождения малыша', points: [
+        'Сопровождение при выписке.',
+        'Помощь с оформлением документов ребёнка.',
+        'Организационная поддержка после родов.',
+      ] },
+    ],
+  },
+  es: {
+    eyebrow: 'APOYO EN CADA ETAPA',
+    title: 'Desde la preparación del viaje hasta los primeros días con tu bebé',
+    link: 'Conocer más sobre el acompañamiento',
+    stages: [
+      { title: 'Antes de llegar a Argentina', points: [
+        'Primera consulta y presentación.',
+        'Ayuda para elegir una clínica y un médico.',
+        'Información sobre el sistema de salud argentino.',
+        'Preparación para el embarazo, el parto y la mudanza.',
+      ] },
+      { title: 'Durante el embarazo en Argentina', points: [
+        'Acompañamiento a consultas médicas.',
+        'Traducción y ayuda para comunicarse con el personal médico.',
+        'Ayuda con estudios, derivaciones y turnos.',
+        'Apoyo organizativo durante el embarazo.',
+      ] },
+      { title: 'Durante el parto', points: [
+        'Acompañamiento en la maternidad.',
+        'Ayuda para comunicarse con los médicos y el equipo de salud.',
+        'Traducción de información y recomendaciones.',
+        'Apoyo emocional antes y durante el parto.',
+      ] },
+      { title: 'Después del nacimiento', points: [
+        'Acompañamiento durante el alta hospitalaria.',
+        'Ayuda con los trámites de documentación del bebé.',
+        'Apoyo organizativo después del parto.',
+      ] },
+    ],
+  },
+  en: {
+    eyebrow: 'SUPPORT AT EVERY STAGE',
+    title: 'From preparing for your trip to your first days with your baby',
+    link: 'Learn more about support',
+    stages: [
+      { title: 'Before arriving in Argentina', points: [
+        'Initial consultation and introduction.',
+        'Help choosing a clinic and doctor.',
+        'Information about the Argentine healthcare system.',
+        'Preparing for pregnancy, birth and relocation.',
+      ] },
+      { title: 'During pregnancy in Argentina', points: [
+        'Accompaniment to medical appointments.',
+        'Translation and help communicating with medical staff.',
+        'Help with tests, referrals and appointments.',
+        'Organizational support throughout pregnancy.',
+      ] },
+      { title: 'Support during birth', points: [
+        'Accompaniment at the maternity hospital.',
+        'Help communicating with doctors and the medical team.',
+        'Translation of information and recommendations.',
+        'Emotional support before and during labor.',
+      ] },
+      { title: 'After your baby is born', points: [
+        'Accompaniment during hospital discharge.',
+        'Help with your baby’s documents.',
+        'Organizational support after birth.',
+      ] },
+    ],
+  },
+} satisfies Record<Locale, { eyebrow: string; title: string; link: string; stages: { title: string; points: string[] }[] }>
+
 const whatsappMessages: Record<Locale, string> = {
   ru: 'Добрый день, хочу записаться на консультацию.',
   es: 'Hola, Sasha. Buen día, quisiera coordinar una consulta.',
@@ -110,13 +203,21 @@ export default function Page() {
         <span className="hero-index">01 / 08</span>
       </section>
 
-      <section className="travel-teaser" aria-labelledby="travel-teaser-title">
-        <div>
-          <p className="eyebrow">ДО ПРИЕЗДА В АРГЕНТИНУ · ONLINE</p>
-          <h2 id="travel-teaser-title">Планируете приехать в Аргентину для родов?</h2>
-          <p>С Сашей можно познакомиться дистанционно ещё до поездки, обсудить ваши вопросы и возможность сопровождения в Буэнос-Айресе.</p>
+      <section className="journey-section" aria-labelledby="journey-title">
+        <div className="journey-heading">
+          <p className="eyebrow">{supportJourney[locale].eyebrow}</p>
+          <h2 id="journey-title">{supportJourney[locale].title}</h2>
         </div>
-        <Link className="travel-teaser-link" href="/rody-v-argentine">Подробнее о сопровождении <ArrowUpRight size={17} aria-hidden="true" /></Link>
+        <div className="journey-grid">
+          {supportJourney[locale].stages.map((stage, index) => (
+            <article className="journey-card" key={stage.title}>
+              <span className="journey-number">{String(index + 1).padStart(2, '0')}</span>
+              <h3>{stage.title}</h3>
+              <ul>{stage.points.map(point => <li key={point}>{point}</li>)}</ul>
+            </article>
+          ))}
+        </div>
+        <Link className="travel-teaser-link" href="/rody-v-argentine">{supportJourney[locale].link} <ArrowUpRight size={17} aria-hidden="true" /></Link>
       </section>
 
       <section className="intro section-grid" id="about"><div className="section-label"><span>{t.intro.kicker}</span></div><div className="portrait-frame"><Image src={portraitImageSrc} alt={t.intro.imageAlt} fill sizes="(max-width: 768px) 88vw, 38vw" /></div><div className="intro-copy"><h2>{t.intro.title}</h2><p>{t.intro.body}</p><p className="italic-note">{t.intro.note}</p></div></section>
