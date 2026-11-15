@@ -45,6 +45,11 @@ export const metadata: Metadata = {
   description: pageDescription,
   applicationName: 'Sasha Kert',
   creator: 'Sasha Kert',
+  icons: {
+    icon: [{ url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' }],
+    shortcut: '/favicon.svg',
+    apple: '/apple-icon.png',
+  },
   openGraph: {
     title: pageTitle,
     description: pageDescription,
