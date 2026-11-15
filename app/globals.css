@@ -34,3 +34,22 @@ a { color: inherit; text-decoration: none; }
 .travel-teaser-link { font-size: 12px; border-bottom: 1px solid currentColor; padding: 8px 0; display: inline-flex; flex: none; align-items: center; gap: 9px; }
 .travel-teaser-link:hover { color: var(--rust); }
 @media (max-width: 800px) { .travel-teaser { flex-direction: column; align-items: flex-start; padding: 58px 6vw; } }
+
+
+/* Four stages of care, between the introduction and about sections */
+.journey-section { background: #e7e0d5; padding: 76px 9vw 78px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.journey-heading { margin-bottom: 33px; }
+.journey-heading h2 { font: 400 clamp(32px, 3.8vw, 54px)/1.14 var(--serif); letter-spacing: -.045em; max-width: 830px; margin: 16px 0 0; }
+.journey-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 17px; margin-bottom: 30px; }
+.journey-card { padding: 32px 33px 35px; background: #f8f4ee; border: 1px solid rgba(104, 86, 73, .13); border-radius: 7px; }
+.journey-number { font-size: 12px; letter-spacing: .15em; color: var(--rust); }
+.journey-card h3 { font: 400 clamp(23px, 2vw, 31px)/1.16 var(--serif); letter-spacing: -.025em; margin: 16px 0 19px; }
+.journey-card ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.journey-card li { color: #5f625b; font-size: 15px; line-height: 1.55; padding-left: 19px; position: relative; }
+.journey-card li::before { content: '•'; color: var(--rust); position: absolute; left: 0; top: 0; }
+.journey-section > .travel-teaser-link { margin-top: 4px; }
+@media (max-width: 800px) {
+  .journey-section { padding: 56px 6vw 62px; }
+  .journey-grid { grid-template-columns: 1fr; gap: 13px; }
+  .journey-card { padding: 28px 25px 30px; }
+}
