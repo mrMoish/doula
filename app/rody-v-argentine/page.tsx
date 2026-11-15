@@ -192,7 +192,6 @@ export default function BirthInArgentinaPage() {
         <div className={styles.testimonialsHeading}>
           <p className={styles.eyebrow}>Отзывы</p>
           <h2 id="testimonials-title">Что говорят женщины, которых я сопровождала</h2>
-          <p>Четыре отзыва из личных сообщений. Длинные сообщения разделены на фрагменты для удобства чтения; имена авторов не указаны.</p>
         </div>
         <div className={styles.testimonialsGrid}>
           {testimonials.map(({ label, fragments, detail }) => (
