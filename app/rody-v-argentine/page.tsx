@@ -4,8 +4,8 @@ import type { Metadata } from 'next'
 import styles from './landing.module.css'
 
 const pageUrl = 'https://doula-nine.vercel.app/rody-v-argentine'
-const pageTitle = 'Роды в Аргентине с русскоязычной доулой | Саша Кертс'
-const pageDescription = 'Планируете приехать рожать в Аргентину? Русскоязычная доула Саша Кертс в Буэнос-Айресе. Можно обсудить сопровождение дистанционно ещё до приезда.'
+const pageTitle = 'Роды в Аргентине с русскоязычной доулой | Саша Керт'
+const pageDescription = 'Планируете приехать рожать в Аргентину? Русскоязычная доула Саша Керт в Буэнос-Айресе. Можно обсудить сопровождение дистанционно ещё до приезда.'
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'Sasha Kerts',
+    siteName: 'Sasha Kert',
     images: [{
       url: 'https://doula-nine.vercel.app/images/sasha-hero.png',
       alt: 'Сопровождение беременности и родов в Буэнос-Айресе',
@@ -105,7 +105,7 @@ export default function BirthInArgentinaPage() {
   return (
     <main className={styles.page}>
       <header className={styles.header}>
-        <Link href="/" className={styles.logo} aria-label="Саша Кертс — на главную">sasha<span>kerts</span></Link>
+        <Link href="/" className={styles.logo} aria-label="Саша Керт — на главную">sasha<span>kert</span></Link>
         <nav className={styles.headerNav} aria-label="Навигация по странице">
           <Link href="/">На главную</Link>
           <a href="#how-it-works">Как мы начнём</a>
@@ -115,10 +115,10 @@ export default function BirthInArgentinaPage() {
 
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <p className={styles.eyebrow}>Саша Кертс · Буэнос-Айрес, Аргентина</p>
+          <p className={styles.eyebrow}>Саша Керт · Буэнос-Айрес, Аргентина</p>
           <h1>Роды в Аргентине с русскоязычной доулой</h1>
           <p className={styles.heroLead}>Планируете приехать рожать в Буэнос-Айрес? Давайте познакомимся ещё до поездки.</p>
-          <p className={styles.heroText}>Меня зовут Саша Кертс. Я сопровождаю женщин во время беременности и родов. Мы можем созвониться дистанционно, пока вы ещё в России или другой стране, и спокойно обсудить, какая поддержка вам нужна.</p>
+          <p className={styles.heroText}>Меня зовут Саша Керт. Я сопровождаю женщин во время беременности и родов. Мы можем созвониться дистанционно, пока вы ещё в России или другой стране, и спокойно обсудить, какая поддержка вам нужна.</p>
           <div className={styles.actions}>
             <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className={styles.primaryAction}>Обсудить сопровождение <span aria-hidden="true">↗</span></a>
             <a href="#before-arrival" className={styles.secondaryAction}>Что можно сделать до приезда</a>
@@ -172,7 +172,7 @@ export default function BirthInArgentinaPage() {
         <div className={styles.aboutPortrait}>
           <Image
             src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg"
-            alt="Саша Кертс — русскоязычная доула в Буэнос-Айресе"
+            alt="Саша Керт — русскоязычная доула в Буэнос-Айресе"
             fill
             sizes="(max-width: 800px) 88vw, 36vw"
           />
@@ -180,7 +180,7 @@ export default function BirthInArgentinaPage() {
         <div className={styles.aboutCopy}>
           <p className={styles.eyebrow}>Знакомство · О Саше</p>
           <h2 id="about-sasha-title">Кто будет рядом с вами на родах?</h2>
-          <p>Меня зовут Саша Кертс. Я русскоязычная доула в Буэнос-Айресе. Помогаю женщинам подготовиться к родам и сопровождаю их в этот день. Мы можем познакомиться дистанционно, ещё до вашего приезда в Аргентину.</p>
+          <p>Меня зовут Саша Керт. Я русскоязычная доула в Буэнос-Айресе. Помогаю женщинам подготовиться к родам и сопровождаю их в этот день. Мы можем познакомиться дистанционно, ещё до вашего приезда в Аргентину.</p>
           <p>Мне важно услышать, как вы представляете роды, что вас волнует и какой помощи вы ждёте. А вы сможете решить, подхожу ли я вам.</p>
           <Link className={styles.aboutLink} href="/#about">
             Подробнее обо мне <span aria-hidden="true">↗</span>
@@ -269,8 +269,8 @@ export default function BirthInArgentinaPage() {
       </section>
 
       <footer className={styles.footer}>
-        <Link href="/" className={styles.logo}>sasha<span>kerts</span></Link>
-        <p>Саша Кертс · Русскоязычная доула в Буэнос-Айресе</p>
+        <Link href="/" className={styles.logo}>sasha<span>kert</span></Link>
+        <p>Саша Керт · Русскоязычная доула в Буэнос-Айресе</p>
         <Link href="/">Все услуги и контакты</Link>
       </footer>
     </main>
