@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-label="Саша Керт — доула">
+  <rect width="256" height="256" rx="58" fill="#FBF0E5"/>
+  <circle cx="196" cy="75" r="20" fill="#EDBE78"/>
+  <path d="M159 28C98 21 48 68 42 123c-7 65 36 112 90 116 33 2 58-10 75-31" fill="none" stroke="#D98268" stroke-width="10" stroke-linecap="round"/>
+  <path d="M165 53c-8 19-20 22-39 24-24 3-33 17-37 37-4 17-21 21-27 42" fill="none" stroke="#B96F4F" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M156 66c10 15 8 27-2 39-7 8-6 17 1 24 7 7 14 8 20 7" fill="none" stroke="#B96F4F" stroke-width="7" stroke-linecap="round"/>
+  <path d="M112 112c-10 17 0 28 16 36 16 8 24 16 20 30" fill="none" stroke="#B96F4F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M86 131c-8 23-10 44 1 64m36-36c-7 12-11 22-9 37" fill="none" stroke="#B96F4F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M137 159c29-15 61 1 66 29 3 20-12 34-27 39" fill="none" stroke="#B96F4F" stroke-width="8" stroke-linecap="round"/>
+  <path d="M151 183c6-8 17-5 19 3 4-9 18-10 21 1 3 9-10 18-21 29-11-11-24-20-19-33Z" fill="#D98268"/>
+  <path d="M166 140c11-6 21-8 30-5 9 3 17 3 26-2m-40 24c12-6 23-5 35-1" fill="none" stroke="#83A2AB" stroke-width="5" stroke-linecap="round"/>
+</svg>
