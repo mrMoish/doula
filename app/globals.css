@@ -76,3 +76,22 @@ a { color: inherit; text-decoration: none; }
 .portrait-slideshow .hero-slide img { object-fit: cover; object-position: center 38%; transform: none; filter: saturate(.55) sepia(.14) contrast(.96) brightness(1.03); }
 .portrait-slideshow .hero-slide-controls { bottom: 20px; right: 20px; }
 @media (max-width: 600px) { .portrait-slideshow .hero-slide-controls { bottom: 12px; right: 12px; } }
+
+
+/* Homepage testimonials: excerpts from the birth-in-Argentina page */
+.featured-testimonials { background: #e8e2d8; padding: clamp(75px, 9vw, 130px) 9vw; }
+.featured-testimonials-heading { max-width: 780px; }
+.featured-testimonials-heading h2 { font: 400 clamp(39px, 4.5vw, 65px)/1.07 var(--serif); letter-spacing: -.05em; margin: 0; }
+.featured-testimonials-note { color: #62665e; font-size: 13px; line-height: 1.6; margin: 15px 0 0; }
+.featured-testimonials-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; margin-top: 48px; }
+.featured-testimonial-card { margin: 0; padding: clamp(26px, 2.8vw, 42px); min-height: 300px; background: var(--paper); display: flex; flex-direction: column; align-items: flex-start; }
+.featured-testimonial-mark { color: var(--rust); font: 70px/.65 var(--serif); margin-bottom: 32px; }
+.featured-testimonial-card blockquote { margin: 0 0 30px; font: 400 clamp(20px, 1.85vw, 25px)/1.42 var(--serif); letter-spacing: -.015em; }
+.featured-testimonial-card blockquote p { margin: 0 0 17px; }
+.featured-testimonial-card blockquote p:last-child { margin-bottom: 0; }
+.featured-testimonial-card figcaption { margin-top: auto; color: #62665e; font-size: 12px; line-height: 1.5; }
+.featured-testimonials-link { display: inline-flex; align-items: center; gap: 10px; margin-top: 34px; border-bottom: 1px solid currentColor; padding-bottom: 8px; font-size: 12px; }
+.featured-testimonials-link:hover { color: var(--rust); }
+@media (max-width: 1100px) { .featured-testimonials-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 800px) { .featured-testimonials { padding: 75px 6vw; } }
+@media (max-width: 640px) { .featured-testimonials-grid { grid-template-columns: 1fr; margin-top: 36px; gap: 14px; } .featured-testimonial-card { min-height: 220px; } }
