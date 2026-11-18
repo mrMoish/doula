@@ -152,6 +152,67 @@ const supportJourney = {
   },
 } satisfies Record<Locale, { eyebrow: string; title: string; link: string; stages: { title: string; points: string[] }[] }>
 
+const featuredReviewsCopy: Record<Locale, { eyebrow: string; title: string; note: string; more: string }> = {
+  ru: {
+    eyebrow: 'ОТЗЫВЫ',
+    title: 'Что говорят женщины, которых я сопровождала',
+    note: '',
+    more: 'Читать все отзывы',
+  },
+  es: {
+    eyebrow: 'TESTIMONIOS',
+    title: 'Lo que cuentan las mujeres a las que acompañé',
+    note: 'Las reseñas originales están en ruso.',
+    more: 'Leer todos los testimonios',
+  },
+  en: {
+    eyebrow: 'TESTIMONIALS',
+    title: 'What the women I supported say',
+    note: 'Original testimonials are in Russian.',
+    more: 'Read all testimonials',
+  },
+}
+
+// Faithful, shortened excerpts from the original testimonials on /rody-v-argentine.
+const featuredTestimonials: {
+  fragments: string[]
+  detail: Record<Locale, string>
+}[] = [
+  {
+    fragments: [
+      'Саша сопровождала меня на родах в Лос Аркос в апреле…',
+      'Саша очень чуткая, доброжелательная и тёплая.',
+    ],
+    detail: {
+      ru: 'Сопровождение родов и визитов к врачам',
+      es: 'Acompañamiento durante el parto y consultas médicas',
+      en: 'Birth support and medical appointments',
+    },
+  },
+  {
+    fragments: [
+      'Человек-солнышко, настолько заботливый, настолько ответственный, чуткий…',
+      'Доула с оценкой 100 из 10, как модно сейчас говорить…',
+    ],
+    detail: {
+      ru: 'Поддержка и помощь с выбором специалистов',
+      es: 'Apoyo y ayuda para encontrar profesionales',
+      en: 'Support and help finding care professionals',
+    },
+  },
+  {
+    fragments: [
+      'Спасибо большое тебе ещё раз…',
+      '… так замечательно помогала',
+    ],
+    detail: {
+      ru: 'Личное сообщение с благодарностью',
+      es: 'Mensaje personal de agradecimiento',
+      en: 'Personal thank-you message',
+    },
+  },
+]
+
 const whatsappMessages: Record<Locale, string> = {
   ru: 'Добрый день, хочу записаться на консультацию.',
   es: 'Hola, Sasha. Buen día, quisiera coordinar una consulta.',
@@ -249,6 +310,28 @@ export default function Page() {
             <button type="button" onClick={() => setPortraitSlide((portraitSlide + 1) % portraitImages.length)} aria-label={locale === 'ru' ? 'Следующее фото' : locale === 'es' ? 'Foto siguiente' : 'Next photo'}><ChevronRight size={24} /></button>
           </div>
         </div><div className="intro-copy"><h2>{t.intro.title}</h2>{t.intro.body.split('\n\n').map((paragraph, index) => <p key={index}>{paragraph}</p>)}{t.intro.note && <p className="italic-note">{t.intro.note}</p>}</div></section>
+
+      <section className="featured-testimonials" id="reviews" aria-labelledby="featured-testimonials-title">
+        <div className="featured-testimonials-heading">
+          <p className="eyebrow">{featuredReviewsCopy[locale].eyebrow}</p>
+          <h2 id="featured-testimonials-title">{featuredReviewsCopy[locale].title}</h2>
+          {featuredReviewsCopy[locale].note && <p className="featured-testimonials-note">{featuredReviewsCopy[locale].note}</p>}
+        </div>
+        <div className="featured-testimonials-grid">
+          {featuredTestimonials.map(({ fragments, detail }, index) => (
+            <figure className="featured-testimonial-card" key={index}>
+              <span className="featured-testimonial-mark" aria-hidden="true">“</span>
+              <blockquote>
+                {fragments.map((fragment) => <p key={fragment}>{fragment}</p>)}
+              </blockquote>
+              <figcaption>{detail[locale]}</figcaption>
+            </figure>
+          ))}
+        </div>
+        <Link className="featured-testimonials-link" href="/rody-v-argentine#reviews">
+          {featuredReviewsCopy[locale].more} <ArrowUpRight size={16} aria-hidden="true" />
+        </Link>
+      </section>
 
       <section className="services section-pad" id="services"><div className="section-heading"><p className="eyebrow">{t.services.kicker}</p><h2>{t.services.title}</h2><p>{t.services.intro}</p></div><div className="service-grid">{t.services.items.map((item) => <article className="service-card" key={item.number}><span className="card-number">{item.number}</span><h3>{item.title}</h3><p>{item.text}</p><span className="card-line" /></article>)}</div></section>
 
