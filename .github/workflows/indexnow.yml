@@ -1,0 +1,73 @@
+name: Notify IndexNow after Vercel deployment
+
+on:
+  status:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  submit:
+    name: Submit updated site URLs
+    if: >-
+      github.event_name == 'workflow_dispatch' ||
+      (
+        github.event.context == 'Vercel' &&
+        github.event.state == 'success' &&
+        contains(github.event.branches.*.name, 'main')
+      )
+    runs-on: ubuntu-latest
+    concurrency:
+      group: indexnow-production
+      cancel-in-progress: false
+    env:
+      SITE_HOST: doula-nine.vercel.app
+      INDEXNOW_KEY: d10ebefbc953c062bb482317b279d470
+
+    steps:
+      - name: Check the public verification key
+        shell: bash
+        run: |
+          set -euo pipefail
+          key_url="https://${SITE_HOST}/${INDEXNOW_KEY}.txt"
+          value="$(curl --fail --silent --show-error --location --retry 3 --retry-delay 2 "$key_url")"
+          if [[ "$value" != "$INDEXNOW_KEY" ]]; then
+            echo "IndexNow key file did not match: $key_url" >&2
+            exit 1
+          fi
+          echo "Verification key is accessible on production."
+
+      - name: Notify IndexNow of the site's two published pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          payload="$(mktemp)"
+          response="$(mktemp)"
+
+          cat > "$payload" <<EOF
+          {
+            "host": "${SITE_HOST}",
+            "key": "${INDEXNOW_KEY}",
+            "keyLocation": "https://${SITE_HOST}/${INDEXNOW_KEY}.txt",
+            "urlList": [
+              "https://${SITE_HOST}/",
+              "https://${SITE_HOST}/rody-v-argentine"
+            ]
+          }
+          EOF
+
+          code="$(curl --silent --show-error --location \
+            --retry 3 --retry-delay 2 \
+            --output "$response" --write-out '%{http_code}' \
+            --header 'Content-Type: application/json; charset=utf-8' \
+            --request POST 'https://api.indexnow.org/indexnow' \
+            --data-binary @"$payload")"
+
+          echo "IndexNow HTTP status: $code"
+          cat "$response"
+
+          case "$code" in
+            200|202) echo "URLs accepted for processing." ;;
+            *) echo "IndexNow did not accept the submission." >&2; exit 1 ;;
+          esac
