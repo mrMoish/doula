@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     url: pageUrl,
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'Sasha Kert',
+    siteName: 'Доула Саша Керт',
     images: [{
       url: 'https://doula-nine.vercel.app/images/sasha-hero.png',
       alt: 'Сопровождение беременности и родов в Буэнос-Айресе',
