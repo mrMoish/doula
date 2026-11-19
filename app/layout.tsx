@@ -3,12 +3,22 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 const socialImage = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/IMG_0980-YpA6BVQaYkgR46UW0ZIgJs8T9XpGfv.jpeg'
+const siteUrl = 'https://doula-nine.vercel.app/'
+const siteName = 'Доула Саша Керт'
 const pageTitle = 'Саша Керт — русскоязычная доула в Буэнос-Айресе'
 const pageDescription = 'Поддержка беременности и родов на русском языке в Буэнос-Айресе. Сопровождение родов — 300 USD; приём у врача — 20 USD.'
 
 const structuredData = {
   '@context': 'https://schema.org',
   '@graph': [
+    {
+      '@type': 'WebSite',
+      '@id': `${siteUrl}#website`,
+      url: siteUrl,
+      name: siteName,
+      alternateName: 'Саша Керт',
+      inLanguage: 'ru',
+    },
     {
       '@type': 'Service',
       name: 'Сопровождение родов с доулой',
@@ -41,9 +51,11 @@ const structuredData = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: pageTitle,
   description: pageDescription,
-  applicationName: 'Sasha Kert',
+  alternates: { canonical: siteUrl },
+  applicationName: siteName,
   creator: 'Sasha Kert',
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml', sizes: 'any' }],
@@ -53,9 +65,10 @@ export const metadata: Metadata = {
   openGraph: {
     title: pageTitle,
     description: pageDescription,
+    url: siteUrl,
     type: 'website',
     locale: 'ru_RU',
-    siteName: 'Sasha Kert',
+    siteName,
     images: [{ url: socialImage, alt: 'Саша Керт — доула в Буэнос-Айресе' }],
   },
   twitter: {
