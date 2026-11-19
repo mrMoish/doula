@@ -22,3 +22,5 @@
 .footer { padding:28px 6vw; background:#242723; color:#f4f1eb; display:flex; justify-content:space-between; align-items:center; gap:20px; font-size:11px; }.footer span { color:#aeb1a8; }
 @media(max-width:850px) { .hero { padding:68px 7vw 48px; }.layout { display:block; padding:0 7vw 75px; }.toc { position:static; display:flex; overflow:auto; gap:18px; padding:15px 0 24px; margin-bottom:10px; border-bottom:1px solid rgba(36,39,35,.15); white-space:nowrap; }.toc p { display:none; }.content { font-size:15px; }.content .lead { font-size:20px; }.content h2 { margin-top:48px; }.footer { flex-wrap:wrap; }.deck { font-size:19px; } }
 @media(max-width:520px) { .header { height:68px; padding:0 6vw; }.nav { gap:14px; font-size:10px; }.hero h1 { font-size:44px; }.hero { padding-top:58px; }.meta { gap:8px; }.example,.author { padding:21px; } }
+
+/* deployment smoke test: 2026-11-19 */
